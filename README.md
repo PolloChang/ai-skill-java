@@ -23,3 +23,19 @@
 2. 使用 **Google Antigravity** 開啟此專案作為工作區 (Workspace)。
 3. 在 Antigravity 右下角的「Settings (設定)」中，將 `.antigravity/rules/` 內的規則匯入或設定為 **Workspace Rules** (工作區規則)，確保 Agent 能嚴格遵守 Java 21 與 Spring Boot 的規範。
 4. 透過 Antigravity 的 **Agent Manager** 建立新的 Agent 並下達開發指令，Agent 將會自動參考 `EXAMPLES.md` 產生結構化的 Task Lists 與實作計畫。
+
+
+```bash
+java-ai-skills-manager/
+├── .antigravity/
+│   └── rules/
+│       └── java-master-rules.md  (定義 Agent 必須遵守的 Workspace Rules)
+├── docs/                         (或 skills/ 存放其他技能說明)
+├── src/                          (您的 Java 原始碼存放區)
+├── ANTIGRAVITY.md                (Agent 系統提示詞與角色設定)
+├── EXAMPLES.md                   (標準寫法範例)
+├── README.md                     (專案首頁，包含如何設定的說明)
+└── build.gradle                  (建置檔)
+
+這樣一來，基礎的文件架構就非常完整了！Google Antigravity 的 Agent 在進入這個專案時，就能立刻掌握這是一個以 Java 21 + Spring Boot 為核心，且具備嚴格開發標準的高品質專案。
+```
