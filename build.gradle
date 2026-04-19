@@ -1,0 +1,50 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.4.0'
+    id 'io.spring.dependency-management' version '1.1.6'
+}
+
+group = 'com.master.ai'
+version = '1.0.0-SNAPSHOT'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
+}
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Spring Boot Core & JPA
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    
+    // Picocli integration
+    implementation 'info.picocli:picocli-spring-boot-starter:4.7.6'
+    
+    // PostgreSQL 17 Driver
+    runtimeOnly 'org.postgresql:postgresql'
+    
+    // Lombok (Optional but recommended for boilerplate)
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+
+    // Testing
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.compilerArgs << "-parameters" // 保留參數名稱供 Reflection 使用 (對 Spring 有利)
+    // 如果需要啟用 Java 預覽特性，可加入: options.compilerArgs << "--enable-preview"
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
