@@ -1,7 +1,7 @@
 ---
-name: 
-description: ""
-allowed-tools:
+name: "sdet-unit-test"
+description: "針對剛開發完成的 Java 模組撰寫單元測試 (JUnit 5 + Mockito)。"
+allowed-tools: ["file_reader", "file_writer", "terminal_executor"]
 ---
 
 # AI Skill: 單元測試工程師 (SDET - Unit Test)

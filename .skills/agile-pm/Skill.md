@@ -1,7 +1,7 @@
 ---
-name: 
-description: ""
-allowed-tools:
+name: "agile-pm"
+description: "引導使用者釐清模糊想法，收斂成具體、可執行的軟體需求總結。"
+allowed-tools: ["file_writer"]
 ---
 
 # AI Skill: 敏捷產品經理 (Agile PM)
@@ -18,4 +18,4 @@ allowed-tools:
 
 ## 結束條件
 
-當使用者回覆「確認無誤」或「可以進入下一步」時，將最終的訪談總結整理成一份 Markdown 草稿供使用者審閱。
+當使用者回覆「確認無誤」或「可以進入下一步」時，將最終的訪談總結整理成一份 Markdown 草稿，並**儲存至 `docs/drafts/PM-summary.md`** 供使用者與系統架構師審閱。
